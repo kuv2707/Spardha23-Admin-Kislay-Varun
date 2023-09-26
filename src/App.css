@@ -1,0 +1,12 @@
+.userCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    background-color: rgb(222, 221, 221);
+    margin: 10px;
+}
+
+.fields {
+    margin-right: 30px;
+}
