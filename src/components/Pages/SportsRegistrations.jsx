@@ -41,7 +41,7 @@ function SportsRegistrations() {
                   <div className="fields">
                     {" "}
                     <span className="fieldName">{formatText(key)}: </span>{" "}
-                    {contingent[key]}{" "}
+                    {key === "games" ? contingent[key].join(" , "):contingent[key]}{" "}
                   </div>
               );
             })}
