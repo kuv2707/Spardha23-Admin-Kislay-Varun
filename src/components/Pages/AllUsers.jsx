@@ -22,12 +22,15 @@ function AllUsers() {
       {
       users.map((user,index) => {
         return <div key={index} className='userCard'>
-          <div className='fields'> <span>Name: </span> {user.name} </div>
-          <div className='fields'> <span>Designation: </span> {user.designation} </div>
-          <div className='fields'> <span>Institute: </span> {user.institution_name} </div>
-          <div className='fields'> <span>Phone No.: </span> {user.phone_no} </div>
+          <div className='fields'> <span className='fieldName'>Name: </span> {user.name} </div>
+          <div className='fields'> <span className='fieldName'>Designation: </span> {user.designation} </div>
+          <div className='fields'> <span className='fieldName'>Institute: </span> {user.institution_name} </div>
+          <div className='fields'> <span className='fieldName'>Phone No.: </span> {user.phone_no} </div>
         </div>
       })
+    }
+    {
+      users.length===0 && <h1>No Users</h1>
     }
     </div>
   )

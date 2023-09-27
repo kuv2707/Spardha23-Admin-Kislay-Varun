@@ -7,9 +7,9 @@ function Navbar() {
 	const { logout, isLoggedIn } = useContext(AuthContext);
 
 	return (
-		<div>
+		<div className={styles.navbar}>
 			{isLoggedIn && (
-				<button onClick={logout}>
+				<button className={styles.logOut} onClick={logout}>
 					<Link to="/login">Logout</Link>
 				</button>
 			)}
