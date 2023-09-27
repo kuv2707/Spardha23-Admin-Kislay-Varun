@@ -1,14 +1,16 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
 
 function AllUsers() {
   const baseUrl = import.meta.env.VITE_BACKEND_URL
   const [users, setUsers] = useState([])
+  const {token} = useContext(AuthContext)
 
   useEffect(() => {
     axios.get(`${baseUrl}/auth/all`, {
       headers: {
-        'Authorization': 'Token 612b7dfcfaa9bc52f3b00c9b25ad323f9ab083fa'
+        'Authorization': `Token ${token}`
       },
     }).then(res => {
       console.log(res)
