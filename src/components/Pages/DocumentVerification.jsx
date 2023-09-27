@@ -22,7 +22,7 @@ function DocumentVerification() {
 		<>
 			<h1>Document Verification</h1>
 			{documents.map((document, index) => (
-				<div key={index} className="userCard">
+				<div key={index} className="card">
 					{Object.keys(document).map((key, subIndex) => (
 						<div key={subIndex} className="fields">
 							<span className="fieldName">{key}:</span>{" "}

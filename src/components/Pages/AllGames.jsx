@@ -31,24 +31,39 @@ function AllGames() {
   }
     , [])
     const mapfunc=(game) => {
-      return <div key={game.id} className='card'>
-        <h2>{gameTypes[game.game_type]}</h2>
-        <div className='fields'> <span>Name: </span> {game.name} </div>
-        <div className='fields'> <span>Min Players: </span> {game.min_players} </div>
-        <div className='fields'> <span>Max Players: </span> {game.max_players} </div>
-      </div>
+      return (
+			<div key={game.id} className="card">
+				<div className="fields">
+					{" "}
+					<span className="fieldName">Name: </span> {game.name}{" "}
+				</div>
+				<div className="fields">
+					{" "}
+					<span className="fieldName">Min Players: </span>{" "}
+					{game.min_players}{" "}
+				</div>
+				<div className="fields">
+					{" "}
+					<span className="fieldName">Max Players: </span>{" "}
+					{game.max_players}{" "}
+				</div>
+			</div>
+		);
     }
   return (
-    <div>
-    <h1>All Games</h1>
-      {
-        [...boyGames,...girlGames,...mixedGames].map(mapfunc)
-      }
-      {
-        [...boyGames,...girlGames,...mixedGames].length === 0 && <p>No Games</p>
-      }
-    </div>
-  )
+		<div>
+			<h1>All Games</h1>
+			<h2>Boys</h2>
+			{boyGames.map(mapfunc)}
+			{boyGames.length === 0 && <p>No Boy Games</p>}
+			<h2>Girls</h2>
+			{girlGames.map(mapfunc)}
+			{girlGames.length === 0 && <p>No Girl Games</p>}
+			<h2>Mixed</h2>
+			{mixedGames.map(mapfunc)}
+			{mixedGames.length === 0 && <p>No Mixed Games</p>}
+		</div>
+  );
 }
 
 export default AllGames
