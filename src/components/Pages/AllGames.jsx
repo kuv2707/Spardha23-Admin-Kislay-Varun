@@ -31,15 +31,21 @@ function AllGames() {
   }
     , [])
     const mapfunc=(game) => {
-      return <div key={game.id} className='userCard'>
+      return <div key={game.id} className='card'>
         <h2>{gameTypes[game.game_type]}</h2>
         <div className='fields'> <span>Name: </span> {game.name} </div>
+        <div className='fields'> <span>Min Players: </span> {game.min_players} </div>
+        <div className='fields'> <span>Max Players: </span> {game.max_players} </div>
       </div>
     }
   return (
     <div>
+    <h1>All Games</h1>
       {
-        [...boyGames.map(mapfunc),...girlGames.map(mapfunc),...mixedGames.map(mapfunc)]
+        [...boyGames,...girlGames,...mixedGames].map(mapfunc)
+      }
+      {
+        [...boyGames,...girlGames,...mixedGames].length === 0 && <p>No Games</p>
       }
     </div>
   )
