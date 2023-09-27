@@ -139,38 +139,10 @@ function Login() {
 				}}
 				className="py-2"
 			>
-				{/* <b> Account not yet created? </b>
-        Click{' '}
-        <Link to="/register/signup" style={{ textDecoration: 'none' }}>
-          here{' '}
-        </Link>{' '}
-        to create one
-        <br /> */}
-				<strong> Account not activated? </strong>
-				Click{" "}
-				<Link to="/register/verify" style={{ textDecoration: "none" }}>
-					{" "}
-					here{" "}
-				</Link>
-				to verify your account.
-				<br />
-				<strong>Forgot Password? </strong>Click{" "}
-				<Link to="/register/forgot" className="text-decoration-none">
-					here
-				</Link>
+				
 			</Alert>
 
-			<div className="col-sm-12 text-end">
-				<span
-					style={{
-						color: "red",
-						fontSize: "14px",
-						fontFamily: "Helvetica Neue,Helvetica,Arial,sans-serif",
-					}}
-				>
-					*&nbsp;Mandatory
-				</span>
-			</div>
+			
 
 			<Form className={`${styles["form-horizontal"]}`}>
 				<div
@@ -332,23 +304,7 @@ function Login() {
 						></FaPaperPlane>
 						LOGIN
 					</Button>
-					{
-						<b
-							style={{
-								fontSize: "10px",
-								textAlign: "center",
-								fontWeight: "normal",
-							}}
-						>
-							{`Don't have an account? `}
-							<Link
-								to="/register/Signup"
-								style={{ textDecoration: "none" }}
-							>
-								{`Sign up `}
-							</Link>
-						</b>
-					}
+					
 				</div>
 			</Form>
 		</div>
