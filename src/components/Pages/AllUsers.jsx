@@ -23,7 +23,6 @@ function AllUsers() {
 				},
 			})
 			.then((res) => {
-				console.log(res);
 				setUsers(res.data);
 			})
 			.catch((err) => console.error(err));

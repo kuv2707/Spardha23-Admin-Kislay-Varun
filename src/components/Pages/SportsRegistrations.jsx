@@ -24,7 +24,6 @@ function SportsRegistrations() {
 				},
 			})
 			.then((res) => {
-				console.log(contingents);
 				setContingents(res.data);
 			})
 			.catch((err) => console.error(err));

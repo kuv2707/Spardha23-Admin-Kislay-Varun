@@ -18,6 +18,7 @@ function DocumentVerification() {
 				},
 			})
 			.then(function (response) {
+				console.log(response.data)
 				setDocuments(response.data);
 			})
 			.catch(function (error) {
@@ -61,9 +62,7 @@ function DocumentRow({ document,setErrorMessage }) {
 	const [modified, setModified] = useState(false);
 	const [newDoc, setNewDoc] = useState({ ...document });
 	const { token } = useContext(AuthContext);
-  console.log(document,newDoc)
 	function submitHandler() {
-    console.log(document,newDoc)
     setModified(false)
 		axios
 			.patch(baseUrl + "/documents/verify/" + document.id+"/", newDoc, {
@@ -125,7 +124,7 @@ function DocumentRow({ document,setErrorMessage }) {
 					/>
 				</td>
 				<td>{newDoc.user_id} </td>
-				<td>{newDoc.verified_by} </td>
+				<td>{newDoc.verified_by_name} </td>
 				<td>
 					<button disabled={!modified} onClick={submitHandler}>
 						Sync Changes
