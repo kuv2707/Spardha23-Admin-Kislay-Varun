@@ -12,7 +12,6 @@ function DocumentVerification() {
         Authorization: `Token ${token}`
       }
     }).then(function(response){
-      console.log(response.data)
       setDocuments(response.data)
     }).catch(function(error){
       console.log(error)

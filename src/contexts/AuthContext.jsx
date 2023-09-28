@@ -10,7 +10,6 @@ function AuthProvider({ children }) {
 	const [token, setToken] = useState(jwt);
 	useEffect(
 		function () {
-			console.log("token changed",token)
 			if (token) {
 				localStorage.setItem("token", token);
 				setIsLoggedIn(true);

@@ -55,14 +55,12 @@ function Login() {
 
 		let baseUrl = import.meta.env.VITE_BACKEND_URL;
 		if (baseUrl.substring(baseUrl.length - 1) !== "/") baseUrl += "/";
-		console.log(`${baseUrl}auth/login/`);
 		axios
 			.post(`${baseUrl}auth/login/`, {
 				username: username.value,
 				password: password.value,
 			})
 			.then((res) => {
-				console.log("login resp", res);
 				localStorage.setItem("token", res.data.token);
 				dispatchToast({
 					color: "success",

@@ -24,7 +24,6 @@ function SportsRegistrations() {
         },
       })
       .then((res) => {
-        console.log(res);
         setContingents(res.data);
       })
       .catch((err) => console.error(err));
@@ -33,7 +32,6 @@ function SportsRegistrations() {
     <div>
       <h1>All Sports Registrations</h1>
       {contingents.map((contingent, index) => {
-        console.log(contingent);
         return (
           <div key={index} className="card">
             {Object.keys(contingent).map((key) => {
