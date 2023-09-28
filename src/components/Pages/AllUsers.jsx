@@ -29,24 +29,31 @@ function AllUsers() {
       .catch((err) => console.error(err));
   }, []);
   return (
-    <div>
-      <h1>All Users</h1>
-      {users.map((user, index) => {
-        return (
-          <div key={index} className="card">
-            {Object.keys(user).map((key) => {
-              return (
-                <div className="fields" key={key + user[key]}>
-                  <span className="fieldName">{formatText(key)}: </span>{" "}
-                  {user[key]}
-                </div>
-              );
-            })}
-          </div>
-        );
-      })}
-      {users.length === 0 && <p>No Users</p>}
-    </div>
+		<div>
+			<h1>All Users</h1>
+			{users.length === 0 ? (
+				<p>No Users</p>
+			) : (
+				<table>
+					<thead>
+						<tr>
+							{Object.keys(users[0]).map((key) => (
+								<th key={key}>{formatText(key)}</th>
+							))}
+						</tr>
+					</thead>
+					<tbody>
+						{users.map((user, index) => (
+							<tr key={index}>
+								{Object.keys(user).map((key) => (
+									<td key={key + user[key]}>{user[key]}</td>
+								))}
+							</tr>
+						))}
+					</tbody>
+				</table>
+			)}
+		</div>
   );
 }
 

@@ -7,13 +7,11 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
-	const {token} = useContext(AuthContext)
-	const navigate = useNavigate();
-	useEffect(() => {
-		if (!token) {
-			navigate("/login");
-		}
-	})
+	const {isLoggedIn}=useContext(AuthContext);
+	const navigate=useNavigate();
+	useEffect(function(){
+		if (!isLoggedIn) navigate("/login");
+	},[])
     return (
 		<>
 			<h1 className={styles.heading}>Admin Dashboard</h1>
