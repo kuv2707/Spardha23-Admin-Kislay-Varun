@@ -1,10 +1,19 @@
+import { useContext, useEffect } from 'react';
 import Card from '../Card/Card'
 import styles from './Home.module.css'
+import { AuthContext } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Home() {
-
+	const {token} = useContext(AuthContext)
+	const navigate = useNavigate();
+	useEffect(() => {
+		if (!token) {
+			navigate("/login");
+		}
+	})
     return (
 		<>
 			<h1 className={styles.heading}>Admin Dashboard</h1>

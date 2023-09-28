@@ -25,15 +25,6 @@ function Login() {
 	useEffect(() => {
 		const scrollDiv = document.getElementById("loginDiv").offsetTop;
 		window.scrollTo({ top: scrollDiv + 600, behavior: "smooth" });
-		// window.scrollTo({
-		//   top: ref_container.current,
-		//   behavior: 'smooth',
-		// });
-		// register
-		// ref_container.current.scrollIntoView({
-		//   block: 'start',
-		//   behavior: 'smooth',
-		// });
 	}, []);
 	const navigate = useNavigate();
 	const { setToken } = useContext(AuthContext);
