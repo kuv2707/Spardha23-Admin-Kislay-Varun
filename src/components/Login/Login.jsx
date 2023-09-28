@@ -52,6 +52,13 @@ function Login() {
 				password: password.value,
 			})
 			.then((res) => {
+				if(res.data.role!=="admin" && res.data.role!=="staff"){
+					dispatchToast({
+						color: "danger",
+						message:"Please login with admin or staff account",
+					});
+					return;
+				}
 				localStorage.setItem("token", res.data.token);
 				dispatchToast({
 					color: "success",
