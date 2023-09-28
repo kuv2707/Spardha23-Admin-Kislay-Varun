@@ -1,34 +1,34 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function AllUsers() {
-  const baseUrl = import.meta.env.VITE_BACKEND_URL;
-  const [users, setUsers] = useState([]);
-  const { token } = useContext(AuthContext);
-  const formatText = (str) => {
-    const words = str.split("_");
-    const capitalizedWords = words.map(
-      (word) => word.charAt(0).toUpperCase() + word.slice(1)
-    );
-    const result = capitalizedWords.join(" ");
-    return result;
-  };
+	const baseUrl = import.meta.env.VITE_BACKEND_URL;
+	const [users, setUsers] = useState([]);
+	const { token } = useContext(AuthContext);
+	const formatText = (str) => {
+		const words = str.split("_");
+		const capitalizedWords = words.map(
+			(word) => word.charAt(0).toUpperCase() + word.slice(1)
+		);
+		const result = capitalizedWords.join(" ");
+		return result;
+	};
 
-  useEffect(() => {
-    axios
-      .get(`${baseUrl}/auth/all`, {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        setUsers(res.data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-  return (
+	useEffect(() => {
+		axios
+			.get(`${baseUrl}/auth/all`, {
+				headers: {
+					Authorization: `Token ${token}`,
+				},
+			})
+			.then((res) => {
+				console.log(res);
+				setUsers(res.data);
+			})
+			.catch((err) => console.error(err));
+	}, []);
+	return (
 		<div>
 			<h1>All Users</h1>
 			{users.length === 0 ? (
@@ -54,7 +54,7 @@ function AllUsers() {
 				</table>
 			)}
 		</div>
-  );
+	);
 }
 
 export default AllUsers;

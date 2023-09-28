@@ -37,6 +37,11 @@ button:hover {
     color:black;
     scale:1.1;
 }
+button:disabled{
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+}
 
 .card-container{
     display: flex;
@@ -76,4 +81,12 @@ td{
 }
 th{
     border:2px solid grey;
+}
+
+.error-message {
+  background-color: #ffdddd;
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  padding: 10px;
+  margin: 10px 0;
 }
