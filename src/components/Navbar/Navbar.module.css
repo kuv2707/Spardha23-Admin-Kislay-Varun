@@ -1,11 +1,25 @@
-
-a{
-    text-decoration: none;
-    color: white;
+a {
+	text-decoration: none;
+	color: white;
 }
 
-.navbar{
-    background-color: rgb(2, 70, 41);
-    padding: 20px;
-    border-radius: 20px;
+.navbar {
+	background-color: rgb(37, 124, 128);
+	padding: 20px;
+	border-radius: 20px;
+}
+
+.logOut {
+	width: fit-content;
+	right: 30px;
+	position: absolute;
+}
+.logOut:disabled {
+	background-color: grey;
+	color: white;
+	cursor: not-allowed;
+}
+.heading {
+	display: inline-block;
+	color: rgb(253, 254, 254);
 }

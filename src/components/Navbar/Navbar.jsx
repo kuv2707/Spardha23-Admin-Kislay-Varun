@@ -5,18 +5,21 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
 	const { logout, isLoggedIn } = useContext(AuthContext);
-	const navigate=useNavigate();
+	const navigate = useNavigate();
 	function logoutHandler() {
 		logout();
-		navigate('/login')
+		navigate("/login");
 	}
 	return (
 		<div className={styles.navbar}>
-			{isLoggedIn && (
-				<button className={styles.logOut} onClick={logoutHandler}>
-					<Link to="/login">Logout</Link>
-				</button>
-			)}
+			<h1
+				className={styles.heading}
+			>
+				Spardha&apos;23 Admin Page
+			</h1>
+			<button className={styles.logOut} onClick={logoutHandler} disabled={!isLoggedIn}>
+				<Link to="/login">Logout</Link>
+			</button>
 		</div>
 	);
 }

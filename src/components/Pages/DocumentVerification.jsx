@@ -99,7 +99,7 @@ function DocumentRow({ document,setErrorMessage }) {
 						}}
 					/>
 				</td>
-				<td>{newDoc.verification_time ?? "Not verified"} </td>
+				<td>{!newDoc.verification_time ? "Not verified":new Date(newDoc.verification_time).toLocaleString()} </td>
 				<td>
 					<input
 						type="checkbox"
@@ -114,8 +114,7 @@ function DocumentRow({ document,setErrorMessage }) {
 					/>
 				</td>
 				<td>
-					<input
-						type="text"
+					<textarea
 						value={newDoc.comments}
 						onChange={(e) => {
 							setModified(true);
