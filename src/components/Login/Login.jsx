@@ -26,9 +26,9 @@ const Login = () => {
 			if (!name_email || !password) {
 				throw new Error("All fields are required.");
 			}
-			if (!password.match(/^[a-zA-Z0-9-_.]{6,30}$/)) {
+			if (!password.match(/^[a-zA-Z0-9-_.!]{6,30}$/)) {
 				throw new Error(
-					"Invalid password. Password must be between 6 and 30 characters long, and may contain english letters and numbers"
+					"Invalid password. Password must be between 6 and 30 characters long, and may contain english letters, numbers and special characters - _ . !"
 				);
 			}
 
@@ -38,7 +38,7 @@ const Login = () => {
 				}
 			} else if (!name_email.match(/^[a-zA-Z0-9-_.]{6,30}$/)) {
 				throw new Error(
-					"Invalid username. Username must be between 6 and 30 characters long, and may contain english letters and numbers"
+					"Invalid username. Username must be between 6 and 30 characters long, and may contain english letters, numbers and special characters - _ ."
 				);
 			}
 
